@@ -1,0 +1,56 @@
+﻿@model ToDoList.Models.User
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<div class="banner-inner">
+</div>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+    <a asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+    </li>
+    <li class="breadcrumb-item active"><a style="color:forestgreen" asp-area="" asp-controller="Register" asp-action="Index"><b>Kayıt Ol</b></a></li>
+</ol>
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">KAYIT FORMU</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Ad</label>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom02">Soyad</label>
+                            @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword2 mb-2">Email</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2">Şifre</label>
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <p>
+                        <a href="#" id="btn1">Tüm şartları okudum, kabul ediyorum.</a>
+                    </p>
+                    <button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+                }
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#btn1').click(function () {
+            swal("Telif Hakları", "SİTE'de yayınlanan tüm metin, kod, grafikler, logolar, resimler, ses dosyaları ve kullanılan yazılımın sahibi (bundan böyle ve daha sonra 'içerik' olarak anılacaktır) Şirket Adı olup, tüm hakları saklıdır. Yazılı izin olmaksızın site içeriğinin çoğaltılması veya kopyalanması kesinlikle yasaktır. ", "warning");
+        });
+    </script>
+</section>
+

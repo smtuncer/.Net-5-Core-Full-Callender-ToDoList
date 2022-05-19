@@ -1,0 +1,45 @@
+﻿@model ToDoList.Models.Not
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1 style="text-align:center">@Model.NotBasligi</h1>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <h5>Açıklama</h5>
+                <p>@Model.NotAciklamasi</p>
+            </div>
+            <div class="form-group">
+                <h5>Renk</h5>
+                <button class="btn btn-@Model.NotRengi"></button>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+    <a class="btn btn-primary btn-block" asp-area="" asp-route-id="@Model.NotId" asp-controller="Not" asp-action="NotGüncelle">NOT İŞLEMLERİ</a>
+    <a class="btn btn-success btn-block" asp-area="" asp-controller="Home" asp-action="Index">ETKİNLİK TAKVİMİ</a>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+

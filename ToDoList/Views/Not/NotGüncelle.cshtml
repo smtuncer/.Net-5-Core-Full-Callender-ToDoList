@@ -1,0 +1,56 @@
+﻿@model ToDoList.Models.Not
+@{
+    ViewData["Title"] = "NotGüncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <h2 style="text-align:center">NOT GÜNCELLE</h2>
+            <form method="post" asp-controller="Not" asp-action="NotGüncelle">
+                <input type="hidden" name="NotId" value="@Model.NotId" />
+                <div class="form-group">
+                    Başlık
+                    <input value="@Model.NotBasligi" name="NotBasligi" class="form-control" />
+                    <span asp-validation-for="NotBasligi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Açıklama
+                    <input value="@Model.NotAciklamasi" name="NotAciklamasi" class="form-control" />
+                    <span asp-validation-for="NotAciklamasi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Renk
+                    <select name="NotRengi" class="form-control">
+                        <option value="success">Yeşil</option>
+                        <option value="danger">Kırmızı</option>
+                        <option value="warning">Sarı</option>
+                        <option value="info">Turkuaz</option>
+                        <option value="secondary">Gri</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Not Güncelle" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+            <form method="post" asp-controller="Not" asp-action="NotSil">
+                <input type="hidden" name="NotId" value="@Model.NotId" />
+                <input type="submit" value="Not Sil" class="btn btn-danger btn-block" />
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <hr />
+    <div>
+        <a class="btn btn-success" asp-area="" asp-controller="Home" asp-action="Index">ETKİNLİK TAKVİMİ</a>
+    </div>
+    <br />
+    <br />
+    <br />
+
+</div>

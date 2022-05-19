@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ToDoList.Models.Not>
+<button id="btnNotEkle" type="button" class="btn btn-primary btn-block">Not Ekle</button>
+<br />
+<br />
+<br />
+@foreach (var item in Model)
+{
+    <form method="post">
+        <a asp-controller="Not" asp-action="Index" asp-route-id="@item.NotId" class="btn btn-@item.NotRengi btn-block">@item.NotBasligi</a>
+    </form>
+    <br />
+    <br />
+
+}
+<div id="myNotModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center">NOT EKLE</h4>
+            </div>
+            <div class="modal-body">
+                <form class="col-md-12 form-horizontal">
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" id="txtNotSubject" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <input type="text" id="txtNotDescription" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Renk</label>
+                        <select id="notColor" class="form-control">
+                            <option value="success">Yeşil</option>
+                            <option value="danger">Kırmızı</option>
+                            <option value="warning">Sarı</option>
+                            <option value="info">Turkuaz</option>
+                            <option value="secondary">Gri</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="btnNotEkleBtn" class="btn btn-info">Ekle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

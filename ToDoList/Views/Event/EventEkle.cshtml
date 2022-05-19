@@ -1,0 +1,66 @@
+﻿@model ToDoList.Models.Events
+
+@{
+    ViewData["Title"] = "EventEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <h2 style="text-align:center">ETKİNLİK EKLE</h2>
+            <form asp-action="EventEkle">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    Başlık
+                    <input asp-for="title" class="form-control" />
+                    <span asp-validation-for="title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Başlangıç Tarihi
+                    <input asp-for="start" class="form-control" />
+                    <span asp-validation-for="start" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Bitiş Tarihi
+                    <input asp-for="end" class="form-control" />
+                    <span asp-validation-for="end" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            Renk
+                            <input type="color" asp-for="color" class="form-control" />
+                            <span asp-validation-for="color" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            Yazı Rengi
+                            <input type="color" asp-for="textColor" class="form-control" />
+                            <span asp-validation-for="textColor" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Etkinlik Ekle" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <hr />
+    <div>
+        <a class="btn btn-success" asp-area="" asp-controller="Event" asp-action="Index">ETKİNLİK LİSTESİ</a>
+    </div>
+    <br />
+    <br />
+    <br />
+
+</div>
+
+
